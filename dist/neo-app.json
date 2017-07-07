@@ -1,0 +1,42 @@
+{
+	"welcomeFile": "/index.html",
+	"routes": [{
+		"path": "/resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/resources",
+			"version": "1.44.12"
+		},
+		"description": "SAPUI5 Resources"
+	}, {
+		"path": "/test-resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/test-resources",
+			"version": "1.44.12"
+		},
+		"description": "SAPUI5 Test Resources"
+	}, {
+		"path": "/SimpleFarm",
+		"target": {
+			"type": "destination",
+			"name": "SimpleFarm"
+		},
+		"description": "Services XSJS For SimpleFarm Project"
+	}],
+	"sendWelcomeFileRedirect": true,
+	"cacheControl": [{
+		"directive": "private",
+		"maxAge": 0,
+		"path": "**.html"
+	}, {
+		"directive": "private",
+		"maxAge": 0,
+		"path": "sap-ui-cachebuster-info.json"
+	}, {
+		"directive": "public",
+		"maxAge": 31536000
+	}]
+}

@@ -1,0 +1,54 @@
+{
+	"processes":"",
+	"components": [{
+		"key": 0,
+		"name": "Comederos",
+		"status": "50%",
+		"action": "Reusar",
+		"process": "Desinfección",
+		"type": "equipment"
+	}, {
+		"key": 1,
+		"name": "Bebederos",
+		"status": "10%",
+		"action": "Descartar",
+		"process": "Evaluación",
+		"type": "equipment"
+	}, {
+		"key": 2,
+		"name": "Silos",
+		"status": "25%",
+		"action": "Desincorporar",
+		"process": "Montaje",
+		"type": "equipment"
+	}, {
+		"key": 3,
+		"name": "Transportador de Alimentos",
+		"status": "50%",
+		"action": "Reusar",
+		"process": "Desmonte",
+		"type": "equipment"
+	}, {
+		"key": 4,
+		"name": "Pisos",
+		"status": "50%",
+		"action": "Reusar",
+		"process": "Armado",
+		"type":"structure"
+	}, {
+		"key": 5,
+		"name": "Tanques",
+		"status": "15%",
+		"action": "Reusar",
+		"process": "Desmonte",
+		"type":"structure"
+	}, {
+		"key": 6,
+		"name": "Paredes",
+		"status": "50%",
+		"action": "Reusar",
+		"process": "Armado",
+		"type":"structure"
+	}]
+
+}

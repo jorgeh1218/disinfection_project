@@ -1,0 +1,113 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns="sap.m" controllerName="Disinfection.controller.Main">
+	<VBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" direction="Column">
+		<items>
+			<f:SimpleForm id="formComponent" editable="true" breakpointL="1024" breakpointM="600" breakpointXL="1440" backgroundDesign="Solid"
+				layout="ResponsiveGridLayout">
+				<f:content>
+					<Toolbar xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+						<content>
+							<SearchField id="componentName" width="auto" busy="busy-equipments" placeholder="Nombre..." enableSuggestions="true" suggest="onSuggest"
+								suggestionItems="{path:'data>/equipments', sorter:{path:'data>NAME'}}">
+								<suggestionItems>
+									<SuggestionItem text="{data>NAME}" key="{data>MATERIALID}"/>
+								</suggestionItems>
+							</SearchField>
+							<SearchField id="componentProcess" width="auto" busy="busy-processes" placeholder="Proceso..." enableSuggestions="true" suggest="onSuggestProcess"
+								suggestionItems="{path:'data>/processes', sorter:{path:'data>NAME'}}">
+								<suggestionItems>
+									<SuggestionItem text="{data>NAME}" key="{data>PROCESSID}"/>
+								</suggestionItems>
+							</SearchField>
+							<DatePicker change="log_onStartSearch" placeholder="Fecha de Inicio..." id="componentStart"  valueFormat="dd-MM-yyyy"/>
+							<DatePicker change="log_onEndSearch" placeholder="Fecha Final..." id="componentEnd"  valueFormat="dd-MM-yyyy"/>
+							<Button xmlns:core="sap.ui.core" text="+" width="auto" id="addComponent" type="Accept" press="addListComponentElement"/>
+						</content>
+					</Toolbar>
+					<Table mode="MultiSelect" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" busy="{settings>/centerBusyStatus}"
+						xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.m.semantic="sap.m.semantic" xmlns="sap.m" id="componentTable"
+						items="{data>/UX_listActualComponents}">
+						<items>
+							<ColumnListItem type="Inactive" detailPress="onDetail">
+								<cells>
+									<Text text="{data>name}"/>
+									<Text text="{data>process}"/>
+									<Text text="{path:'data>start', formatter:'.Formatter.displayDate'}"/>
+									<Text text="{path:'data>end', formatter:'.Formatter.displayDate'}"/>
+									<!--<Text text="{items>action}"/>-->
+									<!--<Text text="{data>capacity}"/>-->
+								</cells>
+							</ColumnListItem>
+						</items>
+						<columns>
+							<Column vAlign="Middle">
+								<header>
+									<Label text="Nombre"/>
+								</header>
+							</Column>
+							<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+								<header>
+									<Label text="Proceso"/>
+								</header>
+							</Column>
+							<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+								<header>
+									<Label text="Inicio"/>
+								</header>
+							</Column>
+							<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+								<header>
+									<Label text="Fin"/>
+								</header>
+							</Column>
+							<!--<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+								<header>
+									<Label text="Acción"/>
+								</header>
+							</Column>-->
+							<!--<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Capacidad"/>
+						</header>
+					</Column>-->
+						</columns>
+					</Table>
+				</f:content>
+			</f:SimpleForm>
+			<!-- Previous Version 1.0-->
+			<!--<Table id="samplesTable" mode="MultiSelect" inset="false" items="">
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Select width="100%"/>
+							<Select width="100%"/>
+							<Input width="100%"/>
+							<Input width="100%"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Tipo"/>
+						</header>
+					</Column>
+					<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Origen"/>
+						</header>
+					</Column>
+					<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Cantidad"/>
+						</header>
+					</Column>
+					<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Notas"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>-->
+		</items>
+	</VBox>
+</core:FragmentDefinition>

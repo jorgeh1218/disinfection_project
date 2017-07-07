@@ -1,0 +1,8 @@
+{
+	"entity-selected":"",
+	"busy-equipments":false,
+	"busy-processes":false,
+	"visible-buttonComplete":true, 
+	"visible-buttonDelete":true,
+	"visible-buttonUndo":false
+}

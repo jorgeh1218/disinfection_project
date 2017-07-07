@@ -1,0 +1,122 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "DisinfectionApp",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "DisinfectionApp.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "DisinfectionApp.i18n.i18n"
+				}
+			},
+			"data": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data.json"
+			},
+			"items": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/items.json"
+			},
+			"settings": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/settings.json"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "DisinfectionApp.view",
+				"controlId": "appControl",
+				"controlAggregation": "pages",
+				"transition": "slide"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "sheds",
+					"target": "sheds"
+				},
+				{
+					"pattern": "main",
+					"name": "main",
+					"target": "main"
+				}
+			],
+			"targets": {
+				"sheds": {
+					"viewName": "ShedSelection",
+					"viewLevel": 1
+				},
+				"main": {
+					"viewName": "Main",
+					"viewLevel": 2
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

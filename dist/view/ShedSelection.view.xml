@@ -1,0 +1,13 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="DisinfectionApp.controller.ShedSelection">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<TileContainer id="sheds" allowAdd="false" editable="false" tiles="{data>/sheds}">
+						<StandardTile icon="sap-icon://factory" number="{data>SHEDCODE}" info="Estatus" numberUnit="{i18n>titleshed}" title="Ultima actualización: " press="handlePress"/>
+					</TileContainer>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

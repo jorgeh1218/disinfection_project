@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="DisinfectionApp.controller.Main">
+	<Page showNavButton="true" title="{i18n>title}" navButtonPress="goSheds">
+		<content>
+			<ObjectHeader
+                xmlns:core="sap.ui.core"
+                xmlns:mvc="sap.ui.core.mvc"
+                xmlns="sap.m"
+                xmlns:html="http://www.w3.org/1999/xhtml"
+                class="sapSuiteHrdrCntrInner"
+                id="objectHeader"
+                backgroundDesign="Solid"
+                intro="Ultima Actualización: - Estatus: "
+                fieldGroupIds=""
+                markFavorite="true"
+                showMarkers="false"
+                showTitleSelector="false"
+                fullScreenOptimized="false"
+                condensed="true"
+                responsive="true"
+                numberUnit="Aves"
+                title="{i18n>titleshed} {data>/shedSelected/SHEDCODE}"
+                number="{data>/shedSelected/DENSITY}"
+                icon="sap-icon://factory"/>
+			<IconTabBar select="onSelectIconTab" id="tabBar" expandable="false" backgroundDesign="Solid" applyContentPadding="false">
+				<items>
+					<IconTabFilter text="Equipos y Estructuras" id="componentTab">
+						<content>
+							<core:Fragment fragmentName="DisinfectionApp.view.Components" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="Historial" id="historyTab">
+						<content>
+							<core:Fragment fragmentName="DisinfectionApp.view.Log" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<!--<IconTabFilter text="Muestras" id="samplesTab">
+						<content>
+							<core:Fragment fragmentName="ShedStatusReport.view.Samples" type="XML"/>
+						</content>
+					</IconTabFilter>-->
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Bar id="__bar0">
+				<contentRight>
+					<Button xmlns:core="sap.ui.core" visible="{settings>/visible-buttonDelete}"  text="Eliminar"  width="auto" id="button3" type="Reject" press="onDelete"/>
+					<Button xmlns:core="sap.ui.core" visible="{settings>/visible-buttonUndo}"  text="Deshacer"  width="auto" id="button4" type="Reject" press="onUndo"/>
+					<Button xmlns:core="sap.ui.core" visible="{settings>/visible-buttonComplete}" text="Completar"  width="auto" id="button2" type="Accept" press="onComplete"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

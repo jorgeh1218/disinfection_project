@@ -1,0 +1,75 @@
+{
+    "resources": [
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "view/ShedSelection.view.xml"
+        },
+        {
+            "name": "view/Log.fragment.xml"
+        },
+        {
+            "name": "view/Structure.fragment.xml"
+        },
+        {
+            "name": "view/Components.fragment.xml"
+        },
+        {
+            "name": "view/Main.view.xml"
+        },
+        {
+            "name": "view/Action.fragment.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "model/data.json"
+        },
+        {
+            "name": "model/items.json"
+        },
+        {
+            "name": "model/settings.json"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "controller/Utilities.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/Main.controller.js"
+        },
+        {
+            "name": "controller/Formatter.js"
+        },
+        {
+            "name": "controller/ShedSelection.controller.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

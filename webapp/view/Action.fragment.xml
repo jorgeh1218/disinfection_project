@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Acción a Realizar"
+		search="handleSearchAction"
+		confirm="handleClose"
+		cancel="handleClose"
+		items="{path: 'data>/actions', sorter:{path:'data>NAME'}}" >
+		<StandardListItem
+			title="{data>NAME}"
+			type="Active" 
+			detailPress="onPressing"
+			detailTap="onPressing"
+			press="onPressing"
+			tap="onPressing"/>
+	</SelectDialog>
+</core:FragmentDefinition>
